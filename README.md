@@ -4,7 +4,7 @@
 
 ### Michael Vanderloo
 
-This project was done in golang. You will need to install golang and update GOPATH to include this directory.
+This project was done in Go (1.19+). Make sure you have Go installed.
 
 ## Install Golang
 
@@ -15,16 +15,16 @@ https://go.dev/doc/install
 This program is built and run using the go command line tool.
 You can use
 
-```code
-go run .
+```
+go run ./src
 ```
 
 to run the program without generating files
 
 or
 
-```code
-go build .
+```
+go build -o tile-puzzle ./src
 ```
 
 to create an executable.

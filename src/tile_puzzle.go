@@ -170,7 +170,8 @@ func (p Puzzle) toStr() string {
 	var sb strings.Builder
 	var len int = p.len()
 	for i := range len {
-		sb.WriteString(strings.Repeat("+----", len) + "+\n")
+		sb.WriteString(strings.Repeat("+----", len))
+		sb.WriteString("+\n")
 		for j := range len {
 			sb.WriteString("| ")
 
@@ -185,7 +186,7 @@ func (p Puzzle) toStr() string {
 				if e < 10 {
 					sb.WriteString(" ")
 				}
-				sb.WriteString(fmt.Sprint(e))
+				fmt.Fprint(&sb, e)
 			}
 
 			sb.WriteString(" ")
@@ -193,7 +194,8 @@ func (p Puzzle) toStr() string {
 		sb.WriteString("|\n")
 	}
 
-	sb.WriteString(strings.Repeat("+----", len) + "+\n")
+	sb.WriteString(strings.Repeat("+----", len))
+	sb.WriteString("+\n")
 	return sb.String()
 }
 

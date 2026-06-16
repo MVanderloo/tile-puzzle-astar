@@ -1,9 +1,10 @@
 # Tile Puzzle AI
 
 ### CS 420 Project 1
+
 ### Michael Vanderloo
 
-This project was done in golang. You will need to install golang and update GOPATH to include this directory. 
+This project was done in golang. You will need to install golang and update GOPATH to include this directory.
 
 ## Install Golang
 
@@ -38,7 +39,7 @@ There are a few behaviors that the program will do with different config values.
 
 Random seed = 0 will generate a random seed using the system time
 
-Time limit <= 0 will have no time limit
+Time limit \<= 0 will have no time limit
 
 Both the time limit and heuristics have a default value that can be omitted in inputs to use, or overridden.
 

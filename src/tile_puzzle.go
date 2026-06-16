@@ -98,7 +98,7 @@ func newPuzzleSwapped(n int, swaps int) Puzzle {
 	var p Puzzle = newPuzzleSolved(n)
 
 	// make n random moves on the board
-	for i := 0; i < swaps; i++ {
+	for range swaps {
 		moves := p.getNewMoves()
 		p.makeMove(moves[rand.Intn(len(moves))])
 	}
@@ -178,9 +178,9 @@ func (p Puzzle) print() {
 func (p Puzzle) toStr() string {
 	var sb strings.Builder
 	var len int = p.len()
-	for i := 0; i < len; i++ {
+	for i := range len {
 		sb.WriteString(strings.Repeat("+----", len) + "+\n")
-		for j := 0; j < len; j++ {
+		for j := range len {
 			sb.WriteString("| ")
 
 			e := p.get(RowCol{

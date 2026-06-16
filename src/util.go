@@ -29,31 +29,6 @@ const (
 )
 
 /**
- * Returns the opposite of the inputted move
- **/
-func (m Move) opposite() Move {
-	switch m {
-	case Down:
-		return Up
-	case Left:
-		return Right
-	case Right:
-		return Left
-	case Up:
-		return Down
-	default:
-		return None
-	}
-}
-
-/**
- * Returns the index of the 2d array as if it was a single array
- **/
-func (rc RowCol) toN(len int) int {
-	return len*rc.row + rc.col
-}
-
-/**
  * input validation to ensure a puzzle only has unique digits from 0 to n-1
  * assumes isSquare has been called so does not check for a square number range
  **/
@@ -79,29 +54,6 @@ func containsAllIndices(arr []int) bool {
 func isSquare(n int) (bool, int) {
 	base, rem := math.Modf(math.Sqrt(float64(n)))
 	return rem == 0, int(base)
-}
-
-/**
- * remove an element from a slice (doesn't retain ordering)
- */
-func remove(s []int, i int) []int {
-	if i < 0 || i >= len(s) {
-		panic("index out of bounds for remove")
-	}
-
-	if len(s) == 0 || len(s) == 1 {
-		return []int{}
-	}
-
-	if len(s) == 2 {
-		if i == 0 {
-			s[0] = s[1]
-		}
-		return s[:1]
-	}
-
-	s[i] = s[len(s)-1]
-	return s[:len(s)-1]
 }
 
 var euclid_lookup = make(map[RowCol]float32, 9)

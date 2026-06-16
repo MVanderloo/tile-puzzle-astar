@@ -166,15 +166,6 @@ func (p Puzzle) getGoalPos(val int) RowCol {
 	return p.nToCoord(val)
 }
 
-/**
- * Prints out the state of the puzzle
- * only works up to 2 digit numbers
- * looks weird at puzzle len 10, which is infeasible anyways
- */
-func (p Puzzle) print() {
-	fmt.Print(p.toStr())
-}
-
 func (p Puzzle) toStr() string {
 	var sb strings.Builder
 	var len int = p.len()
